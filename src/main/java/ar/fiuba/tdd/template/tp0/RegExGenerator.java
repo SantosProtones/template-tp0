@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RegExGenerator {
-    // TODO: Uncomment this field
-    //private int maxLength;
+
+    private int maxLength;
     private List<RegExpToken> regExpTokens;
     private List<RegExpQuantifier> regExpQuantifiers;
     private List<String> generatedStrings;
 
-    public RegExGenerator(/*int maxLength*/) {
-        //this.maxLength = maxLength;
+    public RegExGenerator(int maxLength) {
+        this.maxLength = maxLength;
         this.regExpTokens = new ArrayList<>();
         this.regExpTokens.add(new RegExpTokenPeriod());
         this.regExpTokens.add(new RegExpTokenEscape());
@@ -20,9 +20,9 @@ public class RegExGenerator {
         this.regExpQuantifiers = new ArrayList<>();
         this.regExpQuantifiers.add(new RegExpQuantifierNone());
         this.regExpQuantifiers.add(new RegExpQuantifierQuestion());
+        this.regExpQuantifiers.add(new RegExpQuantifierPlus(this.maxLength));
     }
 
-    // TODO: Uncomment parameters
     public List<String> generate(String regEx, int numberOfResults) {
         this.generatedStrings = new ArrayList<>();
         while (regEx.length() > 0) {

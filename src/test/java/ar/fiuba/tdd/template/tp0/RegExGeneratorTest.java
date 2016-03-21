@@ -11,8 +11,8 @@ import static org.junit.Assert.assertTrue;
 public class RegExGeneratorTest {
 
     private boolean validate(String regEx, int numberOfResults) {
-        RegExGenerator generator = new RegExGenerator(/*10*/);
-        // TODO: Uncomment parameters
+        RegExGenerator generator = new RegExGenerator(10);
+
         List<String> results = generator.generate(regEx, numberOfResults);
         // force matching the beginning and the end of the strings
         Pattern pattern = Pattern.compile("^" + regEx + "$");
@@ -57,11 +57,11 @@ public class RegExGeneratorTest {
     public void testCharacterSet() {
         assertTrue(validate("[abc]", 1));
     }
-    /*
+
     @Test
     public void testCharacterSetWithQuantifiers() {
         assertTrue(validate("[abc]+", 1));
     }
-    */
+
     // TODO: Add more tests!!!
 }

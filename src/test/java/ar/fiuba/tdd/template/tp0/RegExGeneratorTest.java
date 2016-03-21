@@ -47,12 +47,13 @@ public class RegExGeneratorTest {
     public void testLiteralDotCharacter() {
         assertTrue(validate("\\@..", 1));
     }
-    /*
+
     @Test
     public void testZeroOrOneCharacter() {
         assertTrue(validate("\\@.h?", 1));
     }
 
+    /*
     @Test
     public void testCharacterSet() {
         assertTrue(validate("[abc]", 1));

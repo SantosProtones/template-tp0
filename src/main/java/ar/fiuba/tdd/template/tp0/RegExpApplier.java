@@ -3,9 +3,6 @@ package ar.fiuba.tdd.template.tp0;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Flavio on 20/03/2016.
- */
 public abstract class RegExpApplier {
     private String regExp;
     private String matched;
@@ -19,9 +16,11 @@ public abstract class RegExpApplier {
     public String extract(String target) {
         Pattern pattern = Pattern.compile(this.regExp);
         Matcher matcher = pattern.matcher(target);
-        matcher.find();
-        this.matched = matcher.group();
-        return target.substring(this.matched.length());
+        if (matcher.find()) {
+            this.matched = matcher.group();
+            return target.substring(this.matched.length());
+        }
+        return target;
     }
 
     public void setRegExp(String regExp) {

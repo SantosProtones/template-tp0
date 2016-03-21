@@ -16,6 +16,7 @@ public class RegExGenerator {
         this.regExpTokens.add(new RegExpTokenPeriod());
         this.regExpTokens.add(new RegExpTokenEscape());
         this.regExpTokens.add(new RegExpTokenLiteral());
+        this.regExpTokens.add(new RegExpTokenBrackets());
         this.regExpQuantifiers = new ArrayList<>();
         this.regExpQuantifiers.add(new RegExpQuantifierNone());
         this.regExpQuantifiers.add(new RegExpQuantifierQuestion());

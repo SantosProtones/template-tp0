@@ -13,6 +13,8 @@ public class RegExGenerator {
         //this.maxLength = maxLength;
         this.regExpTokens = new ArrayList<RegExpToken>();
         this.regExpTokens.add(new RegExpTokenPeriod());
+        this.regExpTokens.add(new RegExpTokenEscape());
+        this.regExpTokens.add(new RegExpTokenLiteral());
         this.regExpQuantifiers = new ArrayList<RegExpQuantifier>();
         this.regExpQuantifiers.add(new RegExpQuantifierNone());
     }

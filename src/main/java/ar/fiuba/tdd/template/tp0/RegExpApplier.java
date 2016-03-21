@@ -19,9 +19,9 @@ public abstract class RegExpApplier {
     public String extract(String target) {
         Pattern pattern = Pattern.compile(this.regExp);
         Matcher matcher = pattern.matcher(target);
-        matcher.matches();
+        matcher.find();
         this.matched = matcher.group();
-        return target.replace(this.matched,"");
+        return target.substring(this.matched.length());
     }
 
     public void setRegExp(String regExp) {

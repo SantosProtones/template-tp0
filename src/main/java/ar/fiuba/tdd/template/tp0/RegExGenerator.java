@@ -21,6 +21,7 @@ public class RegExGenerator {
         this.regExpQuantifiers.add(new RegExpQuantifierNone());
         this.regExpQuantifiers.add(new RegExpQuantifierQuestion());
         this.regExpQuantifiers.add(new RegExpQuantifierPlus(this.maxLength));
+        this.regExpQuantifiers.add(new RegExpQuantifierAsterisk(this.maxLength));
     }
 
     public List<String> generate(String regEx, int numberOfResults) {

@@ -30,7 +30,8 @@ public class RegExpTokenBrackets extends RegExpApplier implements RegExpToken {
             this.validChars.add(allChars[i]);
         }
         */
-        Collections.addAll(validChars,allChars);
-
+        Collections.addAll(this.validChars,allChars);
+        this.validChars.remove(0);
+        this.validChars.remove(this.validChars.size() - 1);
     }
 }

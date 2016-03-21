@@ -66,5 +66,9 @@ public class RegExGeneratorTest {
         assertTrue(validate("abc*dv*", 1));
     }
 
-    
+    @Test
+    public void testAll() {
+        assertTrue(validate("\\[..+[ab]*\\*d?c", 1));
+    }
+
 }
